@@ -379,15 +379,423 @@
     <script>
         // Question Banks for Different Topics
         const questionBanks = {
-            "algebra": [],
-            "geometry": [],
-            "calculus": [], 
-            "statistics": [],
-            "trigonometry": [],
-            "number-theory": [],
-            "discrete-math": [],
-            "linear-algebra": []
-        };
+    "algebra": [
+        {
+            question: "Solve for x in the equation 3x - 7 = 14",
+            options: [
+                "x = 5",
+                "x = 7",
+                "x = 8", 
+                "x = 9"
+            ],
+            correctAnswer: 1
+        },
+        {
+            question: "What is the factored form of x² - 9?",
+            options: [
+                "(x + 3)(x + 3)",
+                "(x - 3)(x - 3)",
+                "(x + 3)(x - 3)",
+                "(x - 9)(x + 1)"
+            ],
+            correctAnswer: 2
+        },
+        {
+            question: "If f(x) = 2x² + 3x - 5, what is f(2)?",
+            options: [
+                "3",
+                "7",
+                "9",
+                "11"
+            ],
+            correctAnswer: 2
+        },
+        {
+            question: "Solve the inequality 2x + 5 < 13",
+            options: [
+                "x < 4",
+                "x < 9",
+                "x > 4",
+                "x < 8" 
+            ],
+            correctAnswer: 0
+        },
+        {
+            question: "Which of the following is a solution to the equation x² - 5x + 6 = 0?",
+            options: [
+                "x = 2 only",
+                "x = 3 only",
+                "x = 2 and x = 3",
+                "x = -2 and x = -3"
+            ],
+            correctAnswer: 2
+        }
+    ],
+    "geometry": [
+        {
+            question: "What is the area of a circle with radius 5 units?",
+            options: [
+                "10π square units",
+                "25π square units",
+                "5π square units",
+                "20π square units"
+            ],
+            correctAnswer: 1
+        },
+        {
+            question: "In a right triangle, if one angle is 30° and another is 90°, what is the third angle?",
+            options: [
+                "45°",
+                "60°",
+                "75°",
+                "30°"
+            ],
+            correctAnswer: 1
+        },
+        {
+            question: "What is the perimeter of a rectangle with length 12 cm and width 5 cm?",
+            options: [
+                "17 cm",
+                "34 cm",
+                "60 cm",
+                "24 cm"
+            ],
+            correctAnswer: 1
+        },
+        {
+            question: "What is the volume of a cube with side length 4 units?",
+            options: [
+                "16 cubic units",
+                "32 cubic units",
+                "64 cubic units",
+                "128 cubic units"
+            ],
+            correctAnswer: 2
+        },
+        {
+            question: "Two angles are complementary. If one angle measures 25°, what is the measure of the other angle?",
+            options: [
+                "65°",
+                "155°",
+                "75°",
+                "55°"
+            ],
+            correctAnswer: 0
+        }
+    ],
+    "calculus": [
+        {
+            question: "What is the derivative of f(x) = x³?",
+            options: [
+                "f'(x) = x²",
+                "f'(x) = 3x²",
+                "f'(x) = 3x",
+                "f'(x) = 3"
+            ],
+            correctAnswer: 1
+        },
+        {
+            question: "What is ∫ 2x dx?",
+            options: [
+                "x² + C",
+                "2x² + C",
+                "x² - C",
+                "x + C"
+            ],
+            correctAnswer: 0
+        },
+        {
+            question: "What is the derivative of sin(x)?",
+            options: [
+                "cos(x)",
+                "-sin(x)",
+                "-cos(x)",
+                "tan(x)"
+            ],
+            correctAnswer: 0
+        },
+        {
+            question: "What is the limit of (1 + 1/n)^n as n approaches infinity?",
+            options: [
+                "0",
+                "1",
+                "e",
+                "∞"
+            ],
+            correctAnswer: 2
+        },
+        {
+            question: "Which of the following is the integral of e^x?",
+            options: [
+                "e^x + C",
+                "xe^x + C",
+                "e^(x+1) + C",
+                "ln(x) + C"
+            ],
+            correctAnswer: 0
+        }
+    ],
+    "statistics": [
+        {
+            question: "What is the median of the data set: 3, 7, 8, 9, 12?",
+            options: [
+                "3",
+                "7",
+                "8",
+                "9"
+            ],
+            correctAnswer: 2
+        },
+        {
+            question: "What is the probability of rolling a 6 on a fair six-sided die?",
+            options: [
+                "1/2",
+                "1/3",
+                "1/6",
+                "1/8"
+            ],
+            correctAnswer: 2
+        },
+        {
+            question: "Which measure of central tendency is most affected by extreme values?",
+            options: [
+                "Mean",
+                "Median",
+                "Mode",
+                "Range"
+            ],
+            correctAnswer: 0
+        },
+        {
+            question: "A normal distribution has a mean of 50 and a standard deviation of 10. What percentage of the data falls within one standard deviation of the mean?",
+            options: [
+                "Approximately 50%",
+                "Approximately 68%",
+                "Approximately 95%",
+                "Approximately 99.7%"
+            ],
+            correctAnswer: 1
+        },
+        {
+            question: "What does a correlation coefficient of -0.9 indicate?",
+            options: [
+                "Strong positive correlation",
+                "Weak positive correlation",
+                "Weak negative correlation",
+                "Strong negative correlation"
+            ],
+            correctAnswer: 3
+        }
+    ],
+    "trigonometry": [
+        {
+            question: "What is sin(30°)?",
+            options: [
+                "1",
+                "1/2",
+                "√3/2",
+                "0"
+            ],
+            correctAnswer: 1
+        },
+        {
+            question: "What is the value of cos(90°)?",
+            options: [
+                "0",
+                "1",
+                "-1",
+                "Undefined"
+            ],
+            correctAnswer: 0
+        },
+        {
+            question: "In a right triangle, if sin(θ) = 3/5, what is cos(θ)?",
+            options: [
+                "3/5",
+                "4/5",
+                "5/3",
+                "5/4"
+            ],
+            correctAnswer: 1
+        },
+        {
+            question: "What is the period of the function f(x) = sin(2x)?",
+            options: [
+                "π",
+                "2π",
+                "π/2",
+                "4π"
+            ],
+            correctAnswer: 0
+        },
+        {
+            question: "Which of the following identities is correct?",
+            options: [
+                "sin²(θ) + cos²(θ) = 2",
+                "sin²(θ) - cos²(θ) = 1",
+                "sin²(θ) + cos²(θ) = 1",
+                "sin(θ) + cos(θ) = 1"
+            ],
+            correctAnswer: 2
+        }
+    ],
+    "number-theory": [
+        {
+            question: "What is the greatest common divisor (GCD) of 48 and 72?",
+            options: [
+                "6",
+                "12",
+                "24",
+                "36"
+            ],
+            correctAnswer: 2
+        },
+        {
+            question: "Which of the following numbers is prime?",
+            options: [
+                "51",
+                "57",
+                "87",
+                "83"
+            ],
+            correctAnswer: 3
+        },
+        {
+            question: "What is the least common multiple (LCM) of 8 and 12?",
+            options: [
+                "4",
+                "24",
+                "48",
+                "96"
+            ],
+            correctAnswer: 1
+        },
+        {
+            question: "How many divisors does the number 28 have?",
+            options: [
+                "2",
+                "4",
+                "6",
+                "8"
+            ],
+            correctAnswer: 2
+        },
+        {
+            question: "Which of the following is a perfect square?",
+            options: [
+                "24",
+                "48",
+                "49",
+                "50"
+            ],
+            correctAnswer: 2
+        }
+    ],
+    "discrete-math": [
+        {
+            question: "In how many ways can 5 different books be arranged on a shelf?",
+            options: [
+                "5",
+                "10",
+                "25",
+                "120"
+            ],
+            correctAnswer: 3
+        },
+        {
+            question: "What is the negation of the statement 'If it is raining, then the ground is wet'?",
+            options: [
+                "If it is not raining, then the ground is not wet",
+                "If the ground is not wet, then it is not raining",
+                "It is raining and the ground is not wet",
+                "It is not raining and the ground is wet"
+            ],
+            correctAnswer: 2
+        },
+        {
+            question: "How many different 4-digit numbers can be formed using the digits 1, 2, 3, 4, 5 without repetition?",
+            options: [
+                "24",
+                "120",
+                "625",
+                "1024"
+            ],
+            correctAnswer: 1
+        },
+        {
+            question: "Which of the following is a binary operation?",
+            options: [
+                "f(x) = x²",
+                "g(x,y) = x + y",
+                "h(x,y,z) = xyz",
+                "j(x) = 1/x"
+            ],
+            correctAnswer: 1
+        },
+        {
+            question: "In a group of 6 people, how many different ways can a committee of 3 people be formed?",
+            options: [
+                "18",
+                "20",
+                "36",
+                "720"
+            ],
+            correctAnswer: 1
+        }
+    ],
+    "linear-algebra": [
+        {
+            question: "What is the determinant of the matrix [[3, 2], [1, 4]]?",
+            options: [
+                "5",
+                "10",
+                "12",
+                "14"
+            ],
+            correctAnswer: 1
+        },
+        {
+            question: "Which of the following matrices is singular?",
+            options: [
+                "[[1, 2], [3, 4]]",
+                "[[2, 4], [1, 2]]",
+                "[[1, 0], [0, 1]]",
+                "[[3, 1], [2, 5]]"
+            ],
+            correctAnswer: 1
+        },
+        {
+            question: "What is the rank of a 3×3 identity matrix?",
+            options: [
+                "0",
+                "1",
+                "2",
+                "3"
+            ],
+            correctAnswer: 3
+        },
+        {
+            question: "If A is a 2×3 matrix and B is a 3×4 matrix, what is the size of the product AB?",
+            options: [
+                "2×3",
+                "3×4",
+                "2×4",
+                "3×2"
+            ],
+            correctAnswer: 2
+        },
+        {
+            question: "What are the eigenvalues of the matrix [[2, 0], [0, 5]]?",
+            options: [
+                "2 and 5",
+                "0 and 0",
+                "2 and 0",
+                "5 and 0"
+            ],
+            correctAnswer: 0
+        }
+    ]
+};
 
         // Quiz Parameters
         const QUESTIONS_PER_QUIZ = 10;
