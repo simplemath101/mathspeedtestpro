@@ -1006,40 +1006,51 @@
             timeDisplayEl.textContent = `${timeLeft}s`;
         }
 
+        
         // Handle Answer Function
-        function handleAnswer(selectedAnswer) {
-            // Stop the timer
-            clearInterval(timer);
-            
-            // Mark as answered
-            answered = true;
-            
-            // Calculate time spent on this question
-            const timeSpent = Math.min(TIME_PER_QUESTION, TIME_PER_QUESTION - timeLeft);
-            totalTimeSpent += timeSpent;
-            
-            if (selectedAnswer) {
-                answeredQuestions++;
-                
-                // Get current question
-                const currentQuestion = currentQuiz[currentQuestionIndex];
-                
-                // Check if answer is correct
-                const isCorrect = selectedAnswer === currentQuestion.answer;
-                
-                // Update score
-                if (isCorrect) score++;
-                
-                // Mark options
-                document.querySelectorAll('.option').forEach(option => {
-                    if (option.textContent === currentQuestion.answer) {
-                        option.classList.add('correct');
-                    } else if (option.textContent === selectedAnswer && !isCorrect) {
-                        option.classList.add('incorrect');
-                    }
-                });
+function handleAnswer(selectedAnswer) {
+    // Stop the timer
+    clearInterval(timer);
+    
+    // Mark as answered
+    answered = true;
+    
+    // Calculate time spent on this question
+    const timeSpent = Math.min(TIME_PER_QUESTION, TIME_PER_QUESTION - timeLeft);
+    totalTimeSpent += timeSpent;
+    
+    // Get current question
+    const currentQuestion = currentQuiz[currentQuestionIndex];
+    
+    // Get the correct answer text using the correctAnswer index
+    const correctAnswerText = currentQuestion.options[currentQuestion.correctAnswer];
+    
+    if (selectedAnswer) {
+        answeredQuestions++;
+        
+        // Check if answer is correct
+        const isCorrect = selectedAnswer === correctAnswerText;
+        
+        // Update score
+        if (isCorrect) score++;
+        
+        // Mark options
+        document.querySelectorAll('.option').forEach(option => {
+            if (option.textContent === correctAnswerText) {
+                option.classList.add('correct');
+            } else if (option.textContent === selectedAnswer && !isCorrect) {
+                option.classList.add('incorrect');
             }
-        }
+        });
+    } else {
+        // If no answer was selected, still highlight the correct answer
+        document.querySelectorAll('.option').forEach(option => {
+            if (option.textContent === correctAnswerText) {
+                option.classList.add('correct');
+            }
+        });
+    }
+}
 
         // Next Question Function
         function nextQuestion() {
