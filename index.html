@@ -1024,15 +1024,18 @@
                 // Get current question
                 const currentQuestion = currentQuiz[currentQuestionIndex];
                 
+                // Get the correct answer text from the options array
+                const correctAnswerText = currentQuestion.options[currentQuestion.correctAnswer];
+                
                 // Check if answer is correct
-                const isCorrect = selectedAnswer === currentQuestion.answer;
+                const isCorrect = selectedAnswer === correctAnswerText;
                 
                 // Update score
                 if (isCorrect) score++;
                 
                 // Mark options
                 document.querySelectorAll('.option').forEach(option => {
-                    if (option.textContent === currentQuestion.answer) {
+                    if (option.textContent === correctAnswerText) {
                         option.classList.add('correct');
                     } else if (option.textContent === selectedAnswer && !isCorrect) {
                         option.classList.add('incorrect');
